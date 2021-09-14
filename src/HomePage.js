@@ -1,21 +1,31 @@
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
- 
- 
-const HomePage = () => {
+import {
+  StyleSheet,
+  View,
+  Text,
+  ImageBackground,
+  TextInput,
+  ScrollView,
+} from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import TabView from './widgets/TabView';
+import Header from './widgets/Header';
+
+const HomePage = ({navigation}) => {
   return (
-    <View>
-       <Text style={styles.container}>HomePage</Text>
+    <View style={styles.container}>
+      <Header navigationParameter={navigation} />
+      <TabView />
     </View>
   );
 };
- 
+
 export default HomePage;
 
 const styles = StyleSheet.create({
-    container: {
-        padding: 20,
-        justifyContent: 'center',
-        textAlign: 'center'},
-    textTitle: {textAlign: 'center'}
-})
+  container: {
+    height: '100%',
+    // backgroundColor: 'red',
+    backgroundColor: '#16307d',
+  },
+});
