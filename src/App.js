@@ -19,15 +19,6 @@ const forgot = () => {
 };
 
 export default App = ({navigation}) => {
-  // constructor(props) {
-  //   super(props);
-
-  //   this.state = {
-  //     usernameInput: '',
-  //     passwordInput: '',
-  //   };
-  // }
-
   const [usernameInput, setUsernameInput] = useState('');
   const [passwordInput, setPasswordInput] = useState('');
 
@@ -43,44 +34,8 @@ export default App = ({navigation}) => {
     return true;
   };
 
-  // apiCall = async () => {
-  //   const {usernameInput, passwordInput} = this.state;
-  //   if (this.validateField()) {
-  //     axios
-  //       .post(
-  //         'http://sandbox.mkpmobile.com:10080/api/apps2paympos/apps2pay/public/api/mlogin',
-  //         {
-  //           username: usernameInput,
-  //           password: passwordInput,
-  //           deviceid: 'PE48204T61648',
-  //         },
-  //       )
-  //       .then(response => {
-  //         console.log('response data : ');
-  //         console.log(response.data);
-
-  //         if (response.data.status === 200) {
-  //           console.log('BERHASIL >>>', usernameInput, passwordInput, response);
-  //           this.props.navigation.navigate('HomePage');
-  //         } else {
-  //           console.log(
-  //             'Peringatan >>>',
-  //             usernameInput,
-  //             passwordInput,
-  //             response,
-  //           );
-  //           alert('Username/Password Salah ', response.data.error.msg);
-  //         }
-  //       })
-  //       .catch(error => {
-  //         console.log('ERROR >>>', usernameInput, passwordInput, response);
-  //         Alert.alert('ERROR', error);
-  //       });
-  //   }
-  //   return true;
-  // };
-
   const apiCall = async () => {
+    console.log('Call API');
     if (this.validateField()) {
       axios
         .post('https://reqres.in/api/login', {
@@ -102,39 +57,18 @@ export default App = ({navigation}) => {
               passwordInput,
               response,
             );
+            // Alert.alert('Username/Password Salah ', response.data.error.msg);
             Alert.alert('Username/Password Salah ', response.data.error.msg);
           }
         })
         .catch(error => {
           console.log('ERROR CATCH >>>', error.message);
-          Alert.alert('ERROR', error.message);
+          Alert.alert('Username/Password Salah ', error.message);
         });
     }
     return true;
   };
 
-  // getData =()=>{
-  //   const {usernameInput, passwordInput} = this.state
-  //   const dataForApi = {
-  //     'username': usernameInput,
-  //     'password': passwordInput,
-  //     'deviceid': "PE48204T61648"
-  //   }
-
-  //   fetch('http://sandbox.mkpmobile.com:10080/api/apps2paympos/apps2pay/public/api/mlogin', {
-  //     method: 'POST',
-  //       header:{
-  //         'Content-type':'application/json'
-  //       },
-  //       body:  JSON.stringify({
-  //         'username': "edcdemo",
-  //         'password': "demo123",
-  //         'deviceid': "PE48204T61648"
-  //       })
-  //   })
-  //   .then(response => response.json())
-  //   .then(json => console.log(json))
-  // }
   return (
     <View style={styles.container}>
       <View style={styles.header}>
