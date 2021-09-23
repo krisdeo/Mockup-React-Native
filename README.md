@@ -18,4 +18,4 @@ email: eve.holt@reqres.in
 password: cityslicka
 
 
--Preview Video Included-
+~ App Preview Video : https://drive.google.com/file/d/1ixdjzI7YdbCCqzyJDS0N5V_aK-RM766X/view?usp=sharing ~
