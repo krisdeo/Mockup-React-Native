@@ -17,5 +17,6 @@ email: eve.holt@reqres.in
 
 password: cityslicka
 
+*Added Module for Install : npm install react-native-paper*
 
 ~ App Preview Video : https://drive.google.com/file/d/1ixdjzI7YdbCCqzyJDS0N5V_aK-RM766X/view?usp=sharing ~
